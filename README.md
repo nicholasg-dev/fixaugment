@@ -1,4 +1,4 @@
-# Fix Augment
+# Fix Augment Windsurf
 
 An enhanced unofficial extension for the Augment VSCode extension by Romy Rianata. This extension significantly improves the input and output capabilities of the Augment extension, allowing for larger inputs, better formatted outputs, and a more seamless experience.
 
@@ -19,24 +19,24 @@ An enhanced unofficial extension for the Augment VSCode extension by Romy Rianat
 
 ## Requirements
 
-- Visual Studio Code 1.99.0 or higher
+- Visual Studio Code 1.97.0 or higher
 - Augment extension (augment.vscode-augment)
 
 ## Extension Settings
 
 This extension contributes the following settings:
 
-- `fixAugment.enabled`: Enable or disable the Fix Augment extension
-- `fixAugment.maxInputSize`: Maximum size of input to process at once (in characters)
-- `fixAugment.outputFormat`: Format to use for Augment outputs (default, enhanced, markdown, html)
-- `fixAugment.autoFormatOutput`: Automatically format Augment outputs as they appear
-- `fixAugment.syntaxTheme`: Syntax highlighting theme for code blocks (default, github, monokai, dracula, nord)
-- `fixAugment.smartChunking`: Use smart chunking to preserve context when splitting large inputs
-- `fixAugment.preserveCodeBlocks`: Keep code blocks intact when chunking large inputs
-- `fixAugment.apiKey`: API key for Augment (for future use - Augment currently doesn't require an API key)
-- `fixAugment.bypassLimits`: Enable features to bypass potential future Augment usage limits (Augment currently has unlimited usage)
-- `fixAugment.requestDelay`: Delay between requests in milliseconds (for future use - to avoid potential rate limiting)
-- `fixAugment.maxRequestsPerSession`: Maximum number of requests per session before auto-reset (for future use)
+- `fixAugmentWindsurf.enabled`: Enable or disable the Fix Augment Windsurf extension
+- `fixAugmentWindsurf.maxInputSize`: Maximum size of input to process at once (in characters)
+- `fixAugmentWindsurf.outputFormat`: Format to use for Augment outputs (default, enhanced, markdown, html)
+- `fixAugmentWindsurf.autoFormatOutput`: Automatically format Augment outputs as they appear
+- `fixAugmentWindsurf.syntaxTheme`: Syntax highlighting theme for code blocks (default, github, monokai, dracula, nord)
+- `fixAugmentWindsurf.smartChunking`: Use smart chunking to preserve context when splitting large inputs
+- `fixAugmentWindsurf.preserveCodeBlocks`: Keep code blocks intact when chunking large inputs
+- `fixAugmentWindsurf.apiKey`: API key for Augment (for future use - Augment currently doesn't require an API key)
+- `fixAugmentWindsurf.bypassLimits`: Enable features to bypass potential future Augment usage limits (Augment currently has unlimited usage)
+- `fixAugmentWindsurf.requestDelay`: Delay between requests in milliseconds (for future use - to avoid potential rate limiting)
+- `fixAugmentWindsurf.maxRequestsPerSession`: Maximum number of requests per session before auto-reset (for future use)
 
 ## Known Issues
 
@@ -44,6 +44,12 @@ This extension contributes the following settings:
 - Some syntax highlighting may not be accurate for all languages
 
 ## Release Notes
+
+### 1.1.1
+
+- Modified to be compatible with Windsurf 1.97.0
+- Updated extension ID and configuration to avoid conflicts
+- Forked from the original Fix Augment extension
 
 ### 1.1.0
 
@@ -99,8 +105,8 @@ This extension contributes the following settings:
 - **Augment: Toggle Limit Bypass**: Enable or disable the limit bypass features
 - **Augment: Reset Usage Counter**: Manually reset the usage counter
 
-## About the Author
+## About the Extension
 
-This extension is developed and maintained by MrXploisLite. For support, feature requests, or bug reports, please visit the [GitHub repository](https://github.com/MrXploisLite/fix-augment).
+This extension is a fork of the original Fix Augment extension by MrXploisLite, modified to work with Windsurf 1.97.0. For support, feature requests, or bug reports, please visit the [GitHub repository](https://github.com/nicholasg-dev/fixaugment).
 
-**Enjoy using Fix Augment!**
+**Enjoy using Fix Augment Windsurf!**
