@@ -30,7 +30,7 @@ let extensionContext: vscode.ExtensionContext;
 export function activate(context: vscode.ExtensionContext) {
   // Store the context
   extensionContext = context;
-  console.log('Fix Augment extension is now active!');
+  console.log('Fix Augment Windsurf extension is now active!');
 
   // Initialize usage counter
   requestCounter = context.globalState.get('requestCounter', 0);
@@ -41,9 +41,9 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Create main status bar item
   statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
-  statusBarItem.text = '$(megaphone) Augment Fix: ON';
-  statusBarItem.tooltip = 'Fix Augment is active. Click to toggle.';
-  statusBarItem.command = 'fix-augment.toggleEnhancement';
+  statusBarItem.text = '$(megaphone) Augment Fix Windsurf: ON';
+  statusBarItem.tooltip = 'Fix Augment Windsurf is active. Click to toggle.';
+  statusBarItem.command = 'fix-augment-windsurf.toggleEnhancement';
   statusBarItem.show();
   context.subscriptions.push(statusBarItem);
 
@@ -61,15 +61,15 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Register commands
   context.subscriptions.push(
-    vscode.commands.registerCommand('fix-augment.enhanceInput', enhanceInput),
-    vscode.commands.registerCommand('fix-augment.formatOutput', formatOutput),
-    vscode.commands.registerCommand('fix-augment.toggleEnhancement', toggleEnhancement),
-    vscode.commands.registerCommand('fix-augment.smartChunk', smartChunkInput),
-    vscode.commands.registerCommand('fix-augment.applyTheme', applyTheme),
-    vscode.commands.registerCommand('fix-augment.optimizeCodeBlocks', optimizeCodeBlocks),
-    vscode.commands.registerCommand('fix-augment.setApiKey', setApiKey),
-    vscode.commands.registerCommand('fix-augment.toggleLimitBypass', toggleLimitBypass),
-    vscode.commands.registerCommand('fix-augment.resetUsageCounter', resetUsageCounter)
+    vscode.commands.registerCommand('fix-augment-windsurf.enhanceInput', enhanceInput),
+    vscode.commands.registerCommand('fix-augment-windsurf.formatOutput', formatOutput),
+    vscode.commands.registerCommand('fix-augment-windsurf.toggleEnhancement', toggleEnhancement),
+    vscode.commands.registerCommand('fix-augment-windsurf.smartChunk', smartChunkInput),
+    vscode.commands.registerCommand('fix-augment-windsurf.applyTheme', applyTheme),
+    vscode.commands.registerCommand('fix-augment-windsurf.optimizeCodeBlocks', optimizeCodeBlocks),
+    vscode.commands.registerCommand('fix-augment-windsurf.setApiKey', setApiKey),
+    vscode.commands.registerCommand('fix-augment-windsurf.toggleLimitBypass', toggleLimitBypass),
+    vscode.commands.registerCommand('fix-augment-windsurf.resetUsageCounter', resetUsageCounter)
   );
 
   // Listen for text document changes to intercept Augment output
@@ -148,7 +148,7 @@ async function handleTextDocumentChange(event: vscode.TextDocumentChangeEvent): 
 
       // If limit bypass is active, check if we need to add a delay
       if (limitBypassActive) {
-        const config = vscode.workspace.getConfiguration('fixAugment');
+        const config = vscode.workspace.getConfiguration('fixAugmentWindsurf');
         const requestDelay = config.get<number>('requestDelay') || 500;
 
         // Add a small delay to avoid rate limiting
@@ -180,7 +180,7 @@ async function enhanceInput(): Promise<void> {
   const text = editor.document.getText(selection);
 
   // Get the configuration for max input size
-  const config = vscode.workspace.getConfiguration('fixAugment');
+  const config = vscode.workspace.getConfiguration('fixAugmentWindsurf');
   const maxInputSize = config.get<number>('maxInputSize') || 10000;
 
   // Process the input
@@ -279,13 +279,13 @@ function toggleEnhancement(): void {
   enhancementActive = !enhancementActive;
 
   if (enhancementActive) {
-    statusBarItem.text = '$(megaphone) Augment Fix: ON';
-    statusBarItem.tooltip = 'Fix Augment is active. Click to toggle.';
-    vscode.window.showInformationMessage('Fix Augment is now active');
+    statusBarItem.text = '$(megaphone) Augment Fix Windsurf: ON';
+    statusBarItem.tooltip = 'Fix Augment Windsurf is active. Click to toggle.';
+    vscode.window.showInformationMessage('Fix Augment Windsurf is now active');
   } else {
-    statusBarItem.text = '$(megaphone) Augment Fix: OFF';
-    statusBarItem.tooltip = 'Fix Augment is inactive. Click to toggle.';
-    vscode.window.showInformationMessage('Fix Augment is now inactive');
+    statusBarItem.text = '$(megaphone) Augment Fix Windsurf: OFF';
+    statusBarItem.tooltip = 'Fix Augment Windsurf is inactive. Click to toggle.';
+    vscode.window.showInformationMessage('Fix Augment Windsurf is now inactive');
   }
 }
 
@@ -385,7 +385,7 @@ function optimizeInput(text: string): string {
  */
 function enhanceOutput(text: string): string {
   // Get the configuration for output format
-  const config = vscode.workspace.getConfiguration('fixAugment');
+  const config = vscode.workspace.getConfiguration('fixAugmentWindsurf');
   const outputFormat = config.get<string>('outputFormat') || 'enhanced';
 
   if (outputFormat === 'default') {
@@ -500,7 +500,7 @@ async function smartChunkInput(): Promise<void> {
   const text = editor.document.getText(selection);
 
   // Get the configuration
-  const config = vscode.workspace.getConfiguration('fixAugment');
+  const config = vscode.workspace.getConfiguration('fixAugmentWindsurf');
   const maxInputSize = config.get<number>('maxInputSize') || 10000;
   const preserveCodeBlocks = config.get<boolean>('preserveCodeBlocks') || true;
   const smartChunkingEnabled = config.get<boolean>('smartChunking') || true;
@@ -683,7 +683,7 @@ async function applyTheme(): Promise<void> {
 
   if (selectedTheme) {
     // Update the configuration
-    const config = vscode.workspace.getConfiguration('fixAugment');
+    const config = vscode.workspace.getConfiguration('fixAugmentWindsurf');
     await config.update('syntaxTheme', selectedTheme, vscode.ConfigurationTarget.Global);
 
     vscode.window.showInformationMessage(`Syntax theme set to ${selectedTheme}`);
@@ -743,7 +743,7 @@ async function optimizeCodeBlocks(): Promise<void> {
  */
 async function setApiKey(): Promise<void> {
   // Get the current API key from secure storage
-  const config = vscode.workspace.getConfiguration('fixAugment');
+  const config = vscode.workspace.getConfiguration('fixAugmentWindsurf');
   const currentApiKey = config.get<string>('apiKey') || '';
 
   // Show information about API key usage
@@ -825,7 +825,7 @@ function updateLimitBypassStatusBar(): void {
     limitBypassStatusBarItem.tooltip = 'Augment limit bypass is inactive (for future use). Click to toggle.';
     limitBypassStatusBarItem.backgroundColor = undefined;
   }
-  limitBypassStatusBarItem.command = 'fix-augment.toggleLimitBypass';
+  limitBypassStatusBarItem.command = 'fix-augment-windsurf.toggleLimitBypass';
 }
 
 /**
@@ -853,12 +853,12 @@ function resetUsageCounter(): void {
  * Update the usage counter status bar item
  */
 function updateUsageCounterStatusBar(): void {
-  const config = vscode.workspace.getConfiguration('fixAugment');
+  const config = vscode.workspace.getConfiguration('fixAugmentWindsurf');
   const maxRequests = config.get<number>('maxRequestsPerSession') || 50;
 
   usageCounterStatusBarItem.text = `$(graph) Usage: ${requestCounter}/${maxRequests}`;
   usageCounterStatusBarItem.tooltip = 'Augment usage counter. Click to reset.';
-  usageCounterStatusBarItem.command = 'fix-augment.resetUsageCounter';
+  usageCounterStatusBarItem.command = 'fix-augment-windsurf.resetUsageCounter';
 
   // Change color when approaching the limit
   if (requestCounter >= maxRequests * 0.8) {
@@ -892,7 +892,7 @@ function incrementUsageCounter(): void {
  * Check if we need to auto-reset the counter based on max requests
  */
 function checkAndResetCounter(context: vscode.ExtensionContext): void {
-  const config = vscode.workspace.getConfiguration('fixAugment');
+  const config = vscode.workspace.getConfiguration('fixAugmentWindsurf');
   const maxRequests = config.get<number>('maxRequestsPerSession') || 50;
 
   // Auto-reset if we've reached the limit
