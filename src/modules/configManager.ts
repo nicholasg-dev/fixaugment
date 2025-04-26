@@ -38,6 +38,34 @@ export const DEFAULT_CONFIG: FixAugmentConfig = {
  * Get the extension configuration
  * @returns The extension configuration
  */
+/**
+ * Retrieves the current configuration for the Fix Augment extension.
+ * Combines user settings from VS Code workspace configuration with default values.
+ * 
+ * Configuration Options:
+ * - enabled: Turns the extension on/off (default: true)
+ * - maxInputSize: Maximum allowed input size in characters (default: 10000)
+ * - outputFormat: Controls how output is formatted (default|enhanced|markdown|html)
+ * - autoFormatOutput: Automatically formats Augment output (default: true)
+ * - syntaxTheme: Code highlighting theme (default|github|monokai|dracula|nord)
+ * - smartChunking: Splits large inputs into manageable chunks (default: true)
+ * - preserveCodeBlocks: Maintains original code block formatting (default: true)
+ * - apiKey: Optional API key for future authentication (default: '')
+ * - bypassLimits: Allows exceeding usage limits (default: false)
+ * - requestDelay: Delay between requests in milliseconds (default: 500)
+ * - maxRequestsPerSession: Maximum requests per session (default: 100)
+ *
+ * @example
+ * // Get current configuration
+ * const config = getConfig();
+ * 
+ * // Example: Check if extension is enabled
+ * if (config.enabled) {
+ *   // Process input
+ * }
+ * 
+ * @returns {FixAugmentConfig} Current configuration object
+ */
 export function getConfig(): FixAugmentConfig {
   const config = vscode.workspace.getConfiguration('fixAugmentWindsurf');
   

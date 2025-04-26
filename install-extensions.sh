@@ -1,4 +1,13 @@
 #!/bin/bash
+
+# Install VSCode Extensions Script
+# Purpose: Batch installs recommended VSCode extensions in groups with pauses between batches
+# Dependencies:
+# - Requires Visual Studio Code (code command) to be installed and in PATH
+# - Internet connection to download extensions
+# - User interaction to confirm between batches
+
+# Note: Some extensions may require additional dependencies or configuration after installation
 echo "Installing VSCode Extensions in batches..."
 echo ""
 

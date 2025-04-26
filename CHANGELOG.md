@@ -1,5 +1,10 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 All notable changes to the "fix-augment" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
@@ -8,6 +13,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Changed
 
+- Renamed extension to 'fix-sugment-vscode'
+- Updated to be compatible with VS Code 1.97.0
 - Clarified that API key management is for future use (Augment currently doesn't require an API key)
 - Updated limit bypass features to indicate they're for potential future use
 - Improved UI messages to avoid confusion about API keys and usage limits

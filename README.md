@@ -38,6 +38,10 @@ This extension contributes the following settings:
 - `fixAugmentWindsurf.requestDelay`: Delay between requests in milliseconds (for future use - to avoid potential rate limiting)
 - `fixAugmentWindsurf.maxRequestsPerSession`: Maximum number of requests per session before auto-reset (for future use)
 
+## Compatibility
+
+This extension is compatible with VS Code version 1.97.0 and above.
+
 ## Known Issues
 
 - The extension may not detect all Augment outputs automatically
@@ -47,7 +51,8 @@ This extension contributes the following settings:
 
 ### 1.1.1
 
-- Modified to be compatible with Windsurf 1.97.0
+- Renamed extension to 'fix-sugment-vscode'
+- Modified to be compatible with VS Code 1.97.0
 - Updated extension ID and configuration to avoid conflicts
 - Forked from the original Fix Augment extension
 
